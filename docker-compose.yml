@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  zookeeper:
+    image: 'bitnami/zookeeper:latest'
+    env_file: ./env-file
+    ports:
+      - '2181:2181'
+  
+  kafka:
+    image: 'bitnami/kafka:2.3.0'
+    env_file: ./env-file
+    ports:
+      - '9092:9092'
+      - '29092:29092'
+    volumes:
+      - ./certs:/opt/bitnami/kafka/conf/certs
