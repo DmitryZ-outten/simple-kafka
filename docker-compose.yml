@@ -12,6 +12,6 @@ services:
     env_file: ./env-file
     ports:
       - '9092:9092'
-      - '29092:29092'
+      - '9093:9093'
     volumes:
       - ./certs:/opt/bitnami/kafka/conf/certs
